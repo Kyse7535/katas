@@ -1,16 +1,16 @@
-class PositiveNumber {
-    private _number: Number;
+export function fizzBuzz(_input: number) {
+    if (_input <= 0) {
+        throw new Error("invalid positive number");
 
-    constructor(_number: number) {
-        if (_number <= 0) {
-            throw new Error("Invalid positive number");
-        }
-        this._number = _number;
     }
-    get number() { return this._number; }
-
-}
-
-export function fizzBuzz(_input: PositiveNumber) {
-    return "fizz"
+    if (_input % 3 === 0 && _input % 5 === 0) {
+        return "FizzBuzz"
+    }
+    else if (_input % 3 === 0) {
+        return "Fizz"
+    }
+    else if (_input % 5 === 0) {
+        return "Buzz"
+    }
+    return _input.toString();
 }
